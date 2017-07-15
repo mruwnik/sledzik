@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+<body>
+  <form>
+      <label>Tracker url</label>
+      <input type="text" id="tracker_url" size="100" >
+      <button type="submit">Save</button>
+  </form>
+  <br><br>
+  Any macros in the url will be replaced with appropriate values before being sent to the tracker<br><br>
+  Available macros:<br>
+  * {window} - the id of the window<br>
+  * {tab} - the id of the tab<br>
+  * {action} - the action (eg. window_in for a window gaining focus)<br>
+  * {timestamp} - the timestamp of a given event<br>
+  * {url} - the url of the page that the browser was at when the action occured<br>
+  <br>
+ A sample url: http://127.0.0.1:8000/tracker/{window}/{tab}/{action}/{timestamp}/{url}
+  <script src="options.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+function saveOptions(e) {
+    chrome.storage.local.set({
+        tracker_url: document.querySelector("#tracker_url").value
+    });
+    e.preventDefault();
+}
+
+function restoreOptions() {
+    var gettingItem = chrome.storage.local.get('tracker_url');
+    gettingItem.then((res) => {
+        document.querySelector("#tracker_url").value = res.tracker_url || 'http://127.0.0.1:8000/tracker/{window}/{tab}/{action}/{timestamp}/{url}';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', restoreOptions);
+document.querySelector("form").addEventListener("submit", saveOptions);

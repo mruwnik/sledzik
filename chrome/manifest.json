@@ -1,0 +1,17 @@
+{
+  "description": "Logs how long users are active on each website.",
+  "manifest_version": 2,
+  "name": "śledzik",
+  "version": "1.0",
+
+  "permissions": [
+      "tabs",
+      "storage"
+  ],
+  "options_ui": {
+      "page": "options.html"
+  },
+  "background": {
+      "scripts": ["background.js"]
+  }
+}
